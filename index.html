@@ -1,0 +1,547 @@
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dunia Kopi | Kopi Nusantara</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:"DM Sans",sans-serif;
+    background:#f5efe5;
+    color:#2b1b12;
+}
+
+header{
+    position:absolute;
+    top:0;
+    width:100%;
+    z-index:10;
+    padding:20px 7%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    color:white;
+}
+
+.logo{
+    font-family:"Playfair Display",serif;
+    font-size:27px;
+    font-weight:bold;
+}
+
+nav{
+    display:flex;
+    gap:30px;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+}
+
+.order{
+    background:#d7a568;
+    color:#2b1b12;
+    padding:13px 20px;
+    border-radius:10px;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+/* HERO */
+
+.hero{
+    min-height:680px;
+    padding:200px 7% 80px;
+    position:relative;
+    overflow:hidden;
+    color:white;
+
+    background:
+    linear-gradient(90deg,rgba(30,14,7,.96),rgba(55,28,14,.75)),
+    url("https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1800&q=90");
+
+    background-size:cover;
+    background-position:center;
+}
+
+.hero-content{
+    max-width:650px;
+    position:relative;
+    z-index:2;
+}
+
+.small{
+    color:#d7a568;
+    letter-spacing:5px;
+    font-size:12px;
+    font-weight:bold;
+    margin-bottom:20px;
+}
+
+h1{
+    font-family:"Playfair Display",serif;
+    font-size:clamp(45px,7vw,75px);
+    line-height:1.05;
+    margin-bottom:20px;
+}
+
+.hero p{
+    color:#e8ddd4;
+    font-size:17px;
+    line-height:1.7;
+    margin-bottom:30px;
+}
+
+.hero-btn{
+    display:inline-block;
+    background:#d7a568;
+    color:#2b1b12;
+    padding:16px 27px;
+    border-radius:10px;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+.hero-coffee{
+    position:absolute;
+    right:6%;
+    top:120px;
+    width:430px;
+    height:430px;
+    object-fit:cover;
+    border-radius:50%;
+    box-shadow:0 30px 70px rgba(0,0,0,.5);
+}
+
+/* PRODUK */
+
+.products{
+    padding:80px 7%;
+}
+
+.section-title{
+    font-family:"Playfair Display",serif;
+    font-size:42px;
+    margin:10px 0 35px;
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+}
+
+.card{
+    background:#fffaf2;
+    border:1px solid #e3d6c6;
+    border-radius:15px;
+    overflow:hidden;
+    box-shadow:0 8px 25px rgba(50,30,15,.08);
+}
+
+.card-img{
+    width:100%;
+    height:200px;
+    object-fit:cover;
+}
+
+.card-content{
+    padding:20px;
+}
+
+.card h3{
+    font-family:"Playfair Display",serif;
+    font-size:20px;
+}
+
+.origin{
+    color:#a16c39;
+    font-size:12px;
+    margin:8px 0;
+}
+
+.card p{
+    color:#75685e;
+    font-size:13px;
+    line-height:1.5;
+}
+
+.price{
+    color:#7d4b27;
+    font-size:18px;
+    font-weight:bold;
+    margin:15px 0;
+}
+
+.buy{
+    width:100%;
+    border:0;
+    background:#8e5b34;
+    color:white;
+    padding:12px;
+    border-radius:8px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+/* KENAPA */
+
+.why{
+    padding:80px 7%;
+    background:#2a180d;
+    color:white;
+}
+
+.why h2{
+    font-family:"Playfair Display",serif;
+    font-size:42px;
+    max-width:550px;
+    margin:10px 0 20px;
+}
+
+.why p{
+    max-width:600px;
+    color:#d0c1b5;
+    line-height:1.7;
+}
+
+/* CART */
+
+.cart{
+    text-align:center;
+    padding:60px 20px;
+}
+
+.cart a{
+    background:#2d1a0f;
+    color:white;
+    padding:16px 28px;
+    border-radius:10px;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+/* FOOTER */
+
+footer{
+    background:#1c1009;
+    color:white;
+    text-align:center;
+    padding:40px 20px;
+}
+
+footer p{
+    color:#a99b91;
+    margin-top:10px;
+}
+
+/* MOBILE */
+
+@media(max-width:800px){
+
+    nav{
+        display:none;
+    }
+
+    header{
+        padding:18px 5%;
+    }
+
+    .hero{
+        min-height:760px;
+        padding:190px 5% 60px;
+    }
+
+    .hero-coffee{
+        width:260px;
+        height:260px;
+        right:-50px;
+        top:410px;
+        opacity:.7;
+    }
+
+    h1{
+        font-size:48px;
+    }
+
+    .hero p{
+        max-width:350px;
+    }
+
+    .products{
+        padding:60px 5%;
+    }
+
+    .section-title{
+        font-size:35px;
+    }
+
+    .cards{
+        grid-template-columns:1fr;
+    }
+
+    .card-img{
+        height:240px;
+    }
+
+    .why{
+        padding:60px 5%;
+    }
+
+    .why h2{
+        font-size:35px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+
+    <div class="logo">☕ Dunia Kopi</div>
+
+    <nav>
+        <a href="#">Beranda</a>
+        <a href="#menu">Menu</a>
+        <a href="#tentang">Tentang</a>
+    </nav>
+
+    <a href="checkout.html" class="order">
+        Pesan Sekarang
+    </a>
+
+</header>
+
+
+<section class="hero">
+
+    <img
+        class="hero-coffee"
+        src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=900&q=90"
+        alt="Kopi">
+
+    <div class="hero-content">
+
+        <div class="small">
+            RASA TERBAIK, SETIAP HARI
+        </div>
+
+        <h1>
+            Kenali Dunia
+            Kopi Nusantara
+        </h1>
+
+        <p>
+            Temukan berbagai jenis kopi, karakter rasa,
+            aroma, dan asalnya dalam satu website.
+        </p>
+
+        <a href="#menu" class="hero-btn">
+            Jelajahi Kopi →
+        </a>
+
+    </div>
+
+</section>
+
+
+<section class="products" id="menu">
+
+    <div class="small">JENIS KOPI</div>
+
+    <h2 class="section-title">
+        Kenali Kopi Favoritmu
+    </h2>
+
+    <div class="cards">
+
+        <div class="card">
+
+            <img class="card-img"
+            src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=900&q=90">
+
+            <div class="card-content">
+
+                <h3>Kopi Arabika Gayo</h3>
+
+                <div class="origin">
+                    ● Aceh, Indonesia
+                </div>
+
+                <p>
+                    Rasa lembut dengan aroma harum
+                    dan keasaman yang seimbang.
+                </p>
+
+                <div class="price">Rp35.000</div>
+
+                <button class="buy"
+                onclick="beli('Kopi Arabika Gayo','Rp35.000')">
+                    Beli
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div class="card">
+
+            <img class="card-img"
+            src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=900&q=90">
+
+            <div class="card-content">
+
+                <h3>Kopi Robusta Lampung</h3>
+
+                <div class="origin">
+                    ● Lampung, Indonesia
+                </div>
+
+                <p>
+                    Cita rasa kuat dengan karakter
+                    kopi yang khas.
+                </p>
+
+                <div class="price">Rp28.000</div>
+
+                <button class="buy"
+                onclick="beli('Kopi Robusta Lampung','Rp28.000')">
+                    Beli
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div class="card">
+
+            <img class="card-img"
+            src="https://images.unsplash.com/photo-1447933601403-0c6688de566e?auto=format&fit=crop&w=900&q=90">
+
+            <div class="card-content">
+
+                <h3>Kopi Luwak</h3>
+
+                <div class="origin">
+                    ● Indonesia
+                </div>
+
+                <p>
+                    Cita rasa halus, lembut dan unik.
+                </p>
+
+                <div class="price">Rp120.000</div>
+
+                <button class="buy"
+                onclick="beli('Kopi Luwak','Rp120.000')">
+                    Beli
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div class="card">
+
+            <img class="card-img"
+            src="https://images.unsplash.com/photo-1498804103079-a6351b050096?auto=format&fit=crop&w=900&q=90">
+
+            <div class="card-content">
+
+                <h3>Kopi Toraja</h3>
+
+                <div class="origin">
+                    ● Toraja, Sulawesi
+                </div>
+
+                <p>
+                    Aroma khas dengan rasa yang
+                    kaya dan kompleks.
+                </p>
+
+                <div class="price">Rp42.000</div>
+
+                <button class="buy"
+                onclick="beli('Kopi Toraja','Rp42.000')">
+                    Beli
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="why" id="tentang">
+
+    <div class="small">KENAPA PILIH KAMI?</div>
+
+    <h2>
+        Kopi Berkualitas,
+        Untuk Pecinta Sejati
+    </h2>
+
+    <p>
+        Kami menghadirkan kopi terbaik dari berbagai
+        daerah di Indonesia dengan kualitas terbaik.
+        Setiap biji dipilih untuk menjaga rasa,
+        aroma dan karakter kopi.
+    </p>
+
+</section>
+
+
+<section class="cart">
+
+    <a href="checkout.html">
+        🛒 Lanjut ke Keranjang →
+    </a>
+
+</section>
+
+
+<footer>
+
+    <h3>☕ Dunia Kopi</h3>
+
+    <p>
+        Kopi dari Nusantara, untuk Dunia
+    </p>
+
+    <p>
+        © 2026 Dunia Kopi
+    </p>
+
+</footer>
+
+
+<script>
+
+function beli(nama, harga){
+
+    localStorage.setItem("namaKopi", nama);
+    localStorage.setItem("hargaKopi", harga);
+
+    window.location.href = "checkout.html";
+}
+
+</script>
+
+</body>
+                  </html>
